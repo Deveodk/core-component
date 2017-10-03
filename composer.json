@@ -1,0 +1,26 @@
+{
+    "name": "deveodk/core-components",
+    "autoload": {
+        "psr-4": {
+            "DeveoDK\\Core\\Components\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/framework": "~5.5"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.7"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DeveoDK\\Core\\Components\\ComponentServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT"
+}
