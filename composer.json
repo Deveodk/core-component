@@ -1,8 +1,8 @@
 {
-    "name": "deveodk/core-components",
+    "name": "deveodk/core-component",
     "autoload": {
         "psr-4": {
-            "DeveoDK\\Core\\Components\\": "src/"
+            "DeveoDK\\Core\\Component\\": "src/"
         }
     },
     "require": {
@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DeveoDK\\Core\\Components\\ComponentServiceProvider"
+                "DeveoDK\\Core\\Component\\ComponentServiceProvider"
             ]
         }
     },

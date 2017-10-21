@@ -1,11 +1,11 @@
 <?php
 
-namespace DeveoDK\Core\Components\Views;
+namespace DeveoDK\Core\Component\Views;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\FileViewFinder;
 use InvalidArgumentException;
-use DeveoDK\Core\Components\Services\ComponentServiceProvider;
+use DeveoDK\Core\Component\Services\ComponentServiceProvider;
 
 class ViewFileLoader extends FileViewFinder
 {

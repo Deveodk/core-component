@@ -3,9 +3,9 @@
 namespace DeveoDK\Core\Components;
 
 use Illuminate\Support\ServiceProvider;
-use DeveoDK\Core\Components\Routes\RouteServiceProvider;
-use DeveoDK\Core\Components\Translations\TranslationServiceProvider;
-use DeveoDK\Core\Components\Views\ViewServiceProvider;
+use DeveoDK\Core\Component\Routes\RouteServiceProvider;
+use DeveoDK\Core\Component\Translations\TranslationServiceProvider;
+use DeveoDK\Core\Component\Views\ViewServiceProvider;
 
 class ComponentServiceProvider extends ServiceProvider
 {

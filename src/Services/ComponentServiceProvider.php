@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveoDK\Core\Components\Services;
+namespace DeveoDK\Core\Component\Services;
 
 use Illuminate\Contracts\Foundation\Application;
 

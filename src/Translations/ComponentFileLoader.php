@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveoDK\Core\Components\Translations;
+namespace DeveoDK\Core\Component\Translations;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader;

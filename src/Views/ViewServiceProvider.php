@@ -1,10 +1,10 @@
 <?php
 
-namespace DeveoDK\Core\Components\Views;
+namespace DeveoDK\Core\Component\Views;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\ViewServiceProvider as BaseViewServiceProvider;
-use DeveoDK\Core\Components\Services\ComponentServiceProvider;
+use DeveoDK\Core\Component\Services\ComponentServiceProvider;
 
 class ViewServiceProvider extends BaseViewServiceProvider
 {

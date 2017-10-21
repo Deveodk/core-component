@@ -1,11 +1,11 @@
 <?php
 
-namespace DeveoDK\Core\Components\Routes;
+namespace DeveoDK\Core\Component\Routes;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as BaseRouteServiceProvider;
-use DeveoDK\Core\Components\Services\ComponentServiceProvider;
+use DeveoDK\Core\Component\Services\ComponentServiceProvider;
 
 class RouteServiceProvider extends BaseRouteServiceProvider
 {
