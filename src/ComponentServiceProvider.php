@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveoDK\Core\Components;
+namespace DeveoDK\Core\Component;
 
 use Illuminate\Support\ServiceProvider;
 use DeveoDK\Core\Component\Routes\RouteServiceProvider;
@@ -14,7 +14,7 @@ class ComponentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/components.php', 'core.components');
+        $this->mergeConfigFrom(__DIR__ . '/../config/component.php', 'core.component');
         $this->registerRouteProvider();
         $this->registerTranslationProvider();
         $this->registerViewProvider();
@@ -26,7 +26,7 @@ class ComponentServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/components.php' => config_path('core/components.php'),
+            __DIR__ . '/../config/component.php' => config_path('core/component.php'),
         ]);
     }
 
