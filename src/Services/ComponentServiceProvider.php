@@ -24,7 +24,7 @@ class ComponentServiceProvider
      */
     public function getConfig()
     {
-        return config('core.components');
+        return config('core.component');
     }
 
     /**
