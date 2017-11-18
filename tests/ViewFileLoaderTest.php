@@ -40,6 +40,8 @@ class ViewFileLoaderTest extends TestCase
         $method = $class->getMethod('findInPaths');
         $method->setAccessible(true);
 
+        var_dump($method->invokeArgs($fileLoader, ['bundle:hallo', $paths]));
+
         $this->assertEquals(
             'Tests/Bundle/Views/hallo.blade.php',
             $method->invokeArgs($fileLoader, ['bundle:hallo', $paths])
