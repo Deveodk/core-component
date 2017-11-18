@@ -41,7 +41,7 @@ class ViewFileLoaderTest extends TestCase
         $method->setAccessible(true);
 
         $this->assertEquals(
-            'Tests/Bundle/Views//hallo.blade.php',
+            'Tests/Bundle/Views/hallo.blade.php',
             $method->invokeArgs($fileLoader, ['bundle:hallo', $paths])
         );
     }

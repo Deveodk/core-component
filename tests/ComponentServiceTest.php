@@ -37,9 +37,9 @@ class ComponentServiceTest extends TestCase
      */
     public function canGetBundleNamespaces()
     {
-        $namespace = $this->componentServiceProvider->getBundleNamespaces('Controllers');
+        $namespaces = $this->componentServiceProvider->getBundleNamespaces('Controllers');
 
-        $this->assertEquals('Tests/Bundle/Controllers', $namespace[0]);
+        $this->assertEquals(true, in_array('Tests/Bundle/Controllers', $namespaces));
     }
 
     /**

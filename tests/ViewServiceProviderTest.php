@@ -32,7 +32,7 @@ class ViewServiceProviderTest extends TestCase
 
         $registeredViewPaths = $this->app['config']['view.paths'];
 
-        $this->assertEquals(2, count($registeredViewPaths));
+        $this->assertEquals(true, in_array('Tests/Bundle/Views', $registeredViewPaths));
     }
 
     /**

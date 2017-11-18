@@ -46,7 +46,7 @@ class ViewFileLoader extends FileViewFinder
                 }
 
                 foreach ($this->getPossibleBundleViewFiles($name, $path) as $file) {
-                    if ($this->files->exists($viewPath = $path.'/'.$file)) {
+                    if ($this->files->exists($viewPath = $path.$file)) {
                         return $viewPath;
                     }
                 }
