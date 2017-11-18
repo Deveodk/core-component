@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Bundle\Controllers;
 
 use Illuminate\Routing\Controller;
 

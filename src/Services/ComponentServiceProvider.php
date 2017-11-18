@@ -39,10 +39,10 @@ class ComponentServiceProvider
         foreach ($config['namespaces'] as $namespace) {
             $pathTest = sprintf(
                 '%s%s*%s%s*',
-                $namespace,
+                ucfirst($namespace),
                 DIRECTORY_SEPARATOR,
                 DIRECTORY_SEPARATOR,
-                $directory
+                ucfirst($directory)
             );
 
             $components = glob($pathTest, GLOB_ONLYDIR);
