@@ -31,3 +31,24 @@ Every component is specifically designed for Core and therefore is not compatibl
  ``` Api -> TestBundle -> Views -> email.blade.php```
  
  To retrieve this simply write ``` view('TestBundle:email)```
+
+## Translation files
+
+Dealing with translations can be quite the pain. Primarily due to the enormous language files commonly seen.
+Here we can benefit from the bundle structure. Each bundle can have their own translation files, the translation file name doesn't have to be unique meaning that.
+
+If we have two bundles:
+
+- NiceBundle
+
+- NotSoNiceBundle
+
+each bundle can have their own separate ``` explanation.php```
+
+To get the specific translation simply use the laravel helper methods:
+
+- ``` trans('{bundleName}:{pathToTranslation}') ```
+
+- ``` __('{bundleName}:{pathToTranslation}') ```
+
+you can still use the helpers as you normally would when not using bundle translations
