@@ -41,7 +41,12 @@ class TranslationFileLoader extends FileLoader
             }
 
             if ($this->isBundle($group)) {
+                if ($this->getBundleNameFromPath($path) !== $this->getBundleName($group)) {
+                    continue;
+                }
+
                 $bundle = $this->getBundleName($group);
+
                 $group = str_replace(strtolower($bundle). ':', '', $group);
 
                 if ($this->files->exists($full = "{$path}/{$locale}/{$group}.php")) {
