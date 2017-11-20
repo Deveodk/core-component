@@ -4,6 +4,7 @@ namespace DeveoDK\Test;
 
 use DeveoDK\Core\Component\Views\ViewFileLoader;
 use DeveoDK\Core\Component\Views\ViewServiceProvider;
+use Exception;
 use Mockery;
 use Orchestra\Testbench\TestCase;
 

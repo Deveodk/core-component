@@ -26,14 +26,14 @@ class TranslationServiceProvider extends BaseTranslationProvider
      *
      * @return void
      */
-    protected function registerLoader()
+    public function registerLoader()
     {
         $paths = $this->componentService->getBundleNamespaces('Translations');
 
         $paths = array_merge($paths, [''.base_path() . DIRECTORY_SEPARATOR .'resources/lang']);
 
         $this->app->singleton('translation.loader', function ($app) use ($paths) {
-            return new ComponentFileLoader($app['files'], $paths);
+            return new TranslationFileLoader($app['files'], $paths);
         });
     }
 }
