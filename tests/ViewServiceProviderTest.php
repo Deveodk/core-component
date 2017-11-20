@@ -32,7 +32,7 @@ class ViewServiceProviderTest extends TestCase
 
         $registeredViewPaths = $this->app['config']['view.paths'];
 
-        $this->assertEquals(true, in_array('Tests/Bundle/Views', $registeredViewPaths));
+        $this->assertEquals(2, count($registeredViewPaths));
     }
 
     /**
@@ -53,14 +53,6 @@ class ViewServiceProviderTest extends TestCase
     }
 
     /**
-     * Remove mocked classes from memory
-     */
-    public function tearDown()
-    {
-        Mockery::close();
-    }
-
-    /**
      * Setup core.component test config
      * @param \Illuminate\Foundation\Application $app
      */
@@ -70,8 +62,16 @@ class ViewServiceProviderTest extends TestCase
             'protection_middleware' => [],
             'middleware' => [],
             'namespaces' => [
-                'Tests' => 'tests',
+                'Tests' => base_path() . '/../../../../tests',
             ]
         ]);
+    }
+
+    /**
+     * Remove mocked classes from memory
+     */
+    public function tearDown()
+    {
+        Mockery::close();
     }
 }

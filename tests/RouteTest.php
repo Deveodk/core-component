@@ -141,7 +141,7 @@ class RouteTest extends TestCase
                 ConvertEmptyStringsToNull::class
             ],
             'namespaces' => [
-                'Tests' => 'tests',
+                'Tests' => base_path() . '/../../../../tests',
             ]
         ]);
     }

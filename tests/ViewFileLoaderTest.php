@@ -4,6 +4,7 @@ namespace DeveoDK\Test;
 
 use DeveoDK\Core\Component\Views\ViewFileLoader;
 use DeveoDK\Core\Component\Views\ViewServiceProvider;
+use Mockery;
 use Orchestra\Testbench\TestCase;
 
 class ViewFileLoaderTest extends TestCase
@@ -40,10 +41,10 @@ class ViewFileLoaderTest extends TestCase
         $method = $class->getMethod('findInPaths');
         $method->setAccessible(true);
 
-        $this->assertEquals(
-            'Tests/Bundle/Views/hallo.blade.php',
-            $method->invokeArgs($fileLoader, ['bundle:hallo', $paths])
-        );
+        $this->assertEquals(true, str_contains(
+            $method->invokeArgs($fileLoader, ['bundle:hallo', $paths]),
+            'tests/Bundle/Views/hallo.blade.php'
+        ));
     }
 
     /**
@@ -56,8 +57,16 @@ class ViewFileLoaderTest extends TestCase
             'protection_middleware' => [],
             'middleware' => [],
             'namespaces' => [
-                'Tests' => 'tests',
+                'Tests' => base_path() . '/../../../../tests',
             ]
         ]);
+    }
+
+    /**
+     * Remove mocked classes from memory
+     */
+    public function tearDown()
+    {
+        Mockery::close();
     }
 }

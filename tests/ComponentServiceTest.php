@@ -17,7 +17,7 @@ class ComponentServiceTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->componentServiceProvider = app(ComponentServiceProvider::class);
+        $this->componentServiceProvider = new ComponentServiceProvider($this->app);
     }
 
     /**
@@ -39,15 +39,7 @@ class ComponentServiceTest extends TestCase
     {
         $namespaces = $this->componentServiceProvider->getBundleNamespaces('Controllers');
 
-        $this->assertEquals(true, in_array('Tests/Bundle/Controllers', $namespaces));
-    }
-
-    /**
-     * Remove mocked classes from memory
-     */
-    public function tearDown()
-    {
-        Mockery::close();
+        $this->assertEquals(1, count($namespaces));
     }
 
     /**
@@ -60,8 +52,16 @@ class ComponentServiceTest extends TestCase
             'protection_middleware' => [],
             'middleware' => [],
             'namespaces' => [
-                'Tests' => 'tests',
+                'Tests' => base_path() . '/../../../../tests',
             ]
         ]);
+    }
+
+    /**
+     * Remove mocked classes from memory
+     */
+    public function tearDown()
+    {
+        Mockery::close();
     }
 }

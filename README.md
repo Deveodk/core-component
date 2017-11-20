@@ -3,7 +3,7 @@
 
 # Core components
 
-| for use with laravel 5.5+
+| for use with Core by deveo
 
 ## Installation
 
