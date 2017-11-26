@@ -52,3 +52,13 @@ To get the specific translation simply use the laravel helper methods:
 - ``` __('{bundleName}:{pathToTranslation}') ```
 
 you can still use the helpers as you normally would when not using bundle translations
+
+## Routes
+
+When using laravel we normally define every api route in the api.php file. This file quickly becomes very big and unmaintainable.
+So when using Core we apply the same domain specific bundle logic. Therefore when you declare your routes simply create a routes.php / routes_public.php file in the root of your bundle
+
+The ``` routes.php ``` is meant for protected routes and should therefore only contain routes directly related to authenticated users.
+
+The ``` routes_public.php ``` is meant for public routes and should be used for publicly accessible endpoints.
+
