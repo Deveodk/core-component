@@ -24,22 +24,23 @@ class TranslationFileLoader extends FileLoader
     /**
      * Load a locale from a given path.
      *
-     * @param  string  $path
-     * @param  string  $locale
-     * @param  string  $group
+     * @param  string $path
+     * @param  string $locale
+     * @param  string $group
      * @return array
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function loadPath($path, $locale, $group)
     {
-        foreach ($this->paths as $path) {
-            if (!$this->isBundle($group)) {
-                if ($this->files->exists($full = "{$path}/{$locale}/{$group}.php")) {
-                    return $this->files->getRequire($full);
-                }
+        if (!$this->isBundle($group)) {
+            $path = ''.base_path() . DIRECTORY_SEPARATOR .'resources/lang';
 
-                continue;
+            if ($this->files->exists($full = "{$path}/{$locale}/{$group}.php")) {
+                return $this->files->getRequire($full);
             }
+        }
 
+        foreach ($this->paths as $key => $path) {
             if ($this->isBundle($group)) {
                 if ($this->getBundleNameFromPath($path) !== $this->getBundleName($group)) {
                     continue;

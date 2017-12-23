@@ -30,8 +30,6 @@ class TranslationServiceProvider extends BaseTranslationProvider
     {
         $paths = $this->componentService->getBundleNamespaces('Translations');
 
-        $paths = array_merge($paths, [''.base_path() . DIRECTORY_SEPARATOR .'resources/lang']);
-
         $this->app->singleton('translation.loader', function ($app) use ($paths) {
             return new TranslationFileLoader($app['files'], $paths);
         });
