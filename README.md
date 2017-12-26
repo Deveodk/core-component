@@ -4,9 +4,10 @@
 [![Latest Stable Version](https://poser.pugx.org/deveodk/core-component/v/stable)](https://packagist.org/packages/deveodk/core-component)
 [![Total Downloads](https://poser.pugx.org/deveodk/core-component/downloads)](https://packagist.org/packages/deveodk/core-component)
 [![License](https://poser.pugx.org/deveodk/core-component/license)](https://packagist.org/packages/deveodk/core-component)
+
 # Core components
 
-| for use with Core by deveo
+| To be used explicitly with Core by Deveo
 
 ## Requirements
 
@@ -14,30 +15,28 @@ This package requires the following:
 
 * Composer
 * PHP 7.1 / 7.2
-* Core by deveo
+* Core by Deveo
 
 ## Installation
+
+Installation via Composer:
 
 ```bash
 composer require deveodk/core-components
 ```
 
-
 ## Disclaimer
 
-Core components is a opinionated approach to designing API´s.
-Every component is specifically designed for Core and therefore is not compatible with other frameworks. Not even standard Laravel.
+Core components is an opinionated approach to designing modern Application Programming Interfaces (APIs). Every component is specifically designed to be used with Core by Deveo and is therefore not compatible with other frameworks such as standard Laravel.
 
 
 ## What it does
 
-Core component divides the Laravel class based directory structure into a domain based one.
-What this essentially allows us to have what we call a bundle with an contained logic.
+Core Component divides the Laravel class-based directory structure into a domain based one. This essentially allows us to have what we call a bundle with a contained logic.
 
-Example of this structure:
+**Example of this structure:**
 
 <pre>
-
 •
 ├── api
 │   ├── User
@@ -78,46 +77,53 @@ Example of this structure:
 │       ├── Jobs
 │       ├── Exceptions
 │       └── routes.php
-├── resources // This folder is present cause of compatability with laravel eco system.
+├── *resources
 ├── public
 ├── storage
 └── tests
 </pre>
 
+*\* This folder is present because of compatibility with the Laravel ecosystem*
+
 ## Routing
 
-When using the bundle logic we need to place our routes in quite a different maner than usual.
+When using the bundle logic we need to place our routes in a different way than usual.
 
 To create a new route simply place it in the bundle.
 
-example: 
+**Example:**
 
-Lets say we have a bundle named ``` User ``` and we want to create a new route we can do it in two ways
+Lets say we have a bundle named ``` User ``` and we want to create a new route. We can do this in two ways:
 
-Creating a ``` routes.php ``` file or creating a ``` routes_public.php ``` file
+1. Create a ``` routes.php ``` file
+2. Create a ``` routes_public.php ``` file
 
-the content of the files would be as following
+The content of the files would, in both cases, be:
 
 ```php
-// The $router variable automaticly gets injected
-// Core Components knows the current namespace so you dont need to specify it in the controller part.
+// The $router variable automatically gets injected
+// Core Component knows the current namespace so you don't need to specify it in the controller
 
 $router->get('/users', 'UserController@findAll');
 ```
 
-``` routes.php``` 
-* This file is intended for protected endpoints. 
-* The middlewares are configurale under ``` config->core->components['protection_middleware'] ```
+**When to use which file?**
 
-``` routes_public.php ```
-* This file is intended for use with public accessable endpoints
-* The middlewares are configurale under ``` config->core->components['middleware'] ```
+* ``` routes.php``` 
+   * This file is intended for use with protected endpoints
+   * The middlewares are configurable under:  
+``` config->core->components['protection_middleware'] ```
+
+* ``` routes_public.php ```
+   * This file is intended for use with public accessable endpoints
+   * The middlewares are configurable under:  
+ ``` config->core->components['middleware'] ```
 
 ## View files
 
 Using view files in Core Component is just as simple as using standard Laravel.
 
-You can use any of the standard helpers with only a slight modification in syntax
+You can use any of the standard helpers with only a slight modification in syntax.
 
 ### View loading syntax
 
@@ -132,20 +138,18 @@ view('{bundleName}:{pathToView}')
 view('{pathToView}')
 ```
 
+**Example #1:**
 
-example 1:
-
-
-Lets say we need to get a view file named ``` list.blade.php ``` in the ``` User ``` bundle
+Let's say we need to get a view file named ``` list.blade.php ``` in the ``` User ``` bundle
 
 ```php
 // Always use lowercase letters
 view('user:list')
 ```
 
-example 2:
+**Example #2:**
 
-Lets say we need to get a view file named ``` welcome-email.blade.php ``` in the ``` resources ``` directory
+Let's say we need to get a view file named ``` welcome-email.blade.php ``` in the ``` resources ``` directory
 
 ```php
 // Just the regular Laravel syntax
@@ -154,8 +158,9 @@ view('welcome-email.php')
 
 ## Translation files
 
-Dealing with translations can be quite the pain. Primarily due to the enormous language files commonly seen.
-Here we can benefit from the bundle structure. Each bundle can have their own translation files, the translation file name doesn't have to be unique meaning that.
+Translation handling can be quite a pain. Primarily due to the enormous language files commonly seen. Here we can benefit from the bundle structure. Each bundle can have their own translation file. This makes it far simpler to manage and the translation files don't have to be unique.
+
+**Example:**
 
 If we have two bundles:
 
@@ -163,13 +168,11 @@ If we have two bundles:
 
 - NotSoNiceBundle
 
-each bundle can have their own separate ``` explenation.php ```
+Each bundle can have their own separate ``` explanation.php ``` file.
 
-Using view files in Core Component is just as simple as using standard Laravel.
+As stated before, using view files in Core Component is just as simple as using standard Laravel. You can use any of the standard helpers with only a slight modification in syntax.
 
-You can use any of the standard helpers with only a slight modification in syntax
-
-### Tranlslation loading syntax:
+### Translation loading syntax:
 
 ```php
 // Getting bundle translation file
@@ -181,22 +184,20 @@ view('{bundleName}:{pathToTranslation}')
 view('{pathToTranslation}')
 ```
 
+**Example #1:**
 
-example 1:
-
-
-Lets say we need to get a translation file named ``` exceptions.php ``` in the ``` User ``` bundle with the key ``` title```
+Let's say we need to get a translation file named ``` exceptions.php ``` in the ``` User ``` bundle with ``` title``` as the key
 
 ```php
 // Always use lowercase letters
 __('user:exceptions.title')
 ```
 
-example 2:
+**Example #2:**
 
-Lets say we need to get a view file named ``` exceptions.php ``` in the ``` resources ``` directory with the key ``` title ```
+Let's say we need to get a view file named ``` exceptions.php ``` in the ``` resources ``` directory with ``` title ``` as the key
 
 ```php
-// Just the regular Laravel syntax
+// Just use the regular Laravel syntax
 __('exceptions.title')
 ```
