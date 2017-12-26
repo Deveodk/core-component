@@ -5,7 +5,7 @@
 [![Total Downloads](https://poser.pugx.org/deveodk/core-component/downloads)](https://packagist.org/packages/deveodk/core-component)
 [![License](https://poser.pugx.org/deveodk/core-component/license)](https://packagist.org/packages/deveodk/core-component)
 
-## Core component
+## core-component
 
 > To be used explicitly with Core by Deveo
 
@@ -14,7 +14,7 @@
 This package requires the following:
 
 * Composer
-* PHP 7.1 / 7.2
+* PHP 7.1+
 * Core by Deveo
 
 ## Installation
