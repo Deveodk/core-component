@@ -14,8 +14,9 @@
 This package requires the following:
 
 * Composer
-* PHP 7.1+
 * Core by Deveo
+* Laravel 5.5+
+* PHP 7.1+
 
 ## Installation
 
@@ -27,12 +28,12 @@ composer require deveodk/core-components
 
 ## Disclaimer
 
-Core components is an opinionated approach to designing modern Application Programming Interfaces (APIs). Every component is specifically designed to be used with Core by Deveo and is therefore not compatible with other frameworks such as standard Laravel.
+Core components are an opinionated approach to designing modern Application Programming Interfaces (APIs). Every component is specifically designed to be used with Core by Deveo and is therefore not compatible with other frameworks such as standard Laravel.
 
 
 ## What it does
 
-Core Component divides the Laravel class-based directory structure into a domain based one. This essentially allows us to have what we call a bundle with a contained logic.
+Core-component divides the Laravel class-based directory structure into a domain based one. This essentially allows us to have what we call a bundle with a contained logic.
 
 **Example of this structure:**
 
@@ -119,7 +120,7 @@ $router->get('/users', 'UserController@findAll');
 
 ## View files
 
-Using view files in Core Component is just as simple as using standard Laravel.
+Using view files in core-component is just as simple as using standard Laravel.
 
 You can use any of the standard helpers with only a slight modification in syntax.
 
@@ -167,7 +168,7 @@ If we have two bundles:
 
 Each bundle can have their own separate ``` explanation.php ``` file.
 
-As stated earlier, using view files in Core Component is just as simple as using standard Laravel. You can use any of the standard helpers with only a slight modification in syntax.
+As stated earlier, using view files in core-component is just as simple as using standard Laravel. You can use any of the standard helpers with only a slight modification in syntax.
 
 ### Translation loading syntax:
 
