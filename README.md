@@ -5,14 +5,14 @@
 [![Total Downloads](https://poser.pugx.org/deveodk/core-component/downloads)](https://packagist.org/packages/deveodk/core-component)
 [![License](https://poser.pugx.org/deveodk/core-component/license)](https://packagist.org/packages/deveodk/core-component)
 
-## Core component
+# core-component
 
 > To be used explicitly with Core by Deveo
 
-## Getting started
+### Getting started
 
-See the docs for the complete documentation of this package.
+See the [docs](https://deveodk.github.io/core-component) for the complete documentation of this package.
 
 ---
 
-[<img src="https://cloud.githubusercontent.com/assets/7561792/26679305/bc4d7bda-46d4-11e7-9270-3f6cacdd0ae9.png" style="width:100%">](https://deveo.dk)
+[![Deveo footer](https://s3-eu-west-1.amazonaws.com/rk-solutions/github_footer.png)](https://deveo.dk)
