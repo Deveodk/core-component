@@ -201,4 +201,4 @@ __('exceptions.title')
 
 ---
 
-[<img src="https://cloud.githubusercontent.com/assets/7561792/26679305/bc4d7bda-46d4-11e7-9270-3f6cacdd0ae9.png" style="width:100%">](https://deveo.dk)
+[![Deveo footer](https://s3-eu-west-1.amazonaws.com/rk-solutions/github_footer.png)](https://deveo.dk)
