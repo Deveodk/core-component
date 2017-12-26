@@ -7,7 +7,7 @@
 
 ## Core component
 
-| To be used explicitly with Core by Deveo
+> To be used explicitly with Core by Deveo
 
 ## Requirements
 
@@ -77,13 +77,13 @@ Core Component divides the Laravel class-based directory structure into a domain
 │       ├── Jobs
 │       ├── Exceptions
 │       └── routes.php
-├── *resources
+├── resources*
 ├── public
 ├── storage
 └── tests
 </pre>
 
-*\* This folder is present because of compatibility with the Laravel ecosystem*
+\* This folder is present because of compatibility with the Laravel ecosystem
 
 ## Routing
 
@@ -109,15 +109,13 @@ $router->get('/users', 'UserController@findAll');
 
 **When to use which file?**
 
-* ``` routes.php``` 
-   * This file is intended for use with protected endpoints
-   * The middlewares are configurable under:  
-``` config->core->components['protection_middleware'] ```
+* ``` routes.php ```  
+   * This file is intended for use with protected endpoints.      
+   * The middlewares are configurable under: ``` config->core->components['protection_middleware'] ```
 
 * ``` routes_public.php ```
    * This file is intended for use with public accessable endpoints
-   * The middlewares are configurable under:  
- ``` config->core->components['middleware'] ```
+   * The middlewares are configurable under: ``` config->core->components['middleware'] ```
 
 ## View files
 
@@ -164,13 +162,12 @@ Translation handling can be quite a pain. Primarily due to the enormous language
 
 If we have two bundles:
 
-- NiceBundle
-
-- NotSoNiceBundle
+* NiceBundle
+* NotSoNiceBundle
 
 Each bundle can have their own separate ``` explanation.php ``` file.
 
-As stated before, using view files in Core Component is just as simple as using standard Laravel. You can use any of the standard helpers with only a slight modification in syntax.
+As stated earlier, using view files in Core Component is just as simple as using standard Laravel. You can use any of the standard helpers with only a slight modification in syntax.
 
 ### Translation loading syntax:
 
@@ -201,3 +198,7 @@ Let's say we need to get a view file named ``` exceptions.php ``` in the ``` res
 // Just use the regular Laravel syntax
 __('exceptions.title')
 ```
+
+---
+
+[<img src="https://cloud.githubusercontent.com/assets/7561792/26679305/bc4d7bda-46d4-11e7-9270-3f6cacdd0ae9.png" style="width:100%">](https://deveo.dk)
