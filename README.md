@@ -9,7 +9,7 @@
 
 > To be used explicitly with Core by Deveo
 
-See the [docs](https://deveodk.github.io/core-component) for the complete documentation of this Core package.
+See the [docs](https://core-component.deveo.io) for the complete documentation of this Core package.
 
 ---
 
